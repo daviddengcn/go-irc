@@ -267,6 +267,9 @@ func (c *Client) setupCallbacks() {
 	c.SetHandler(PING, func(e *Event) {
 		c.Command(PONG, e.Message)
 	})
+	c.SetHandler(PONG, func(e *Event) {
+		// c.Command(PONG, e.Message)
+	})
 
 	//Version handler
 	c.SetHandler(CTCP_VERSION, func(e *Event) {
